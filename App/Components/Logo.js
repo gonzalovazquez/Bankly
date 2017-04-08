@@ -11,10 +11,6 @@ var styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#1A5339',
   },
-  icon: {
-    width: 150,
-    height: 150
-  },
   title:{
     fontSize: 30,
     color: 'white'
@@ -31,14 +27,10 @@ class Logo extends Component {
   render(){
     return(
       <View style={styles.container}>
-        <Image
-          style={styles.icon}
-          source={require('image!td-logo')}
-        />
         <Text
           style={styles.title}
           onPress={this.onPressTitle.bind(this)}>
-          For Kids!
+          Banking For Kids!
         </Text>
       </View>
     )

@@ -36,10 +36,6 @@ class Dashboard extends Component {
           onPress={this.viewChores.bind(this)}
           underlayColor="#2e6336">
           <View>
-            <Image
-              style={styles.icon}
-              source={require('image!chores')}
-            />
             <Text> Chores & Allowance</Text>
           </View>
         </TouchableHighlight>
@@ -47,10 +43,6 @@ class Dashboard extends Component {
           onPress={this.viewWishlist.bind(this)}
           underlayColor="#2e6336">
           <View>
-            <Image
-              style={styles.icon}
-              source={require('image!wishlist')}
-            />
             <Text> Wishlist</Text>
           </View>
         </TouchableHighlight>
@@ -58,10 +50,6 @@ class Dashboard extends Component {
           onPress={this.viewCredit.bind(this)}
           underlayColor="#2e6336">
           <View>
-            <Image
-              style={styles.icon}
-              source={require('image!credit')}
-            />
             <Text> Put Money In</Text>
           </View>
         </TouchableHighlight>
@@ -69,10 +57,6 @@ class Dashboard extends Component {
           onPress={this.viewDeposit.bind(this)}
           underlayColor="#2e6336">
           <View>
-            <Image
-              style={styles.icon}
-              source={require('image!deposit')}
-            />
             <Text> Get Money Out</Text>
           </View>
         </TouchableHighlight>

@@ -1,7 +1,7 @@
 'use strict';
 
 import React, { Component } from 'react';
-import { StyleSheet, Image } from 'react-native';
+import { StyleSheet, Image, View, Text } from 'react-native';
 
 var styles = StyleSheet.create({
   icon: {
@@ -16,10 +16,11 @@ var styles = StyleSheet.create({
 class Button extends Component {
   render(){
     return(
-      <Image
-        style={styles.icon}
-        source={require('image!td-logo')}
-      />
+      <View style={styles.container}>
+        <Text>
+          Button
+        </Text>
+      </View>
     )
   }
 };

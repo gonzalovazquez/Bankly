@@ -35,10 +35,6 @@ class Badge extends Component {
   render(){
     return(
       <View style={styles.container}>
-        <Image
-          style={styles.icon}
-          source={require('image!avatar')}
-        />
         <Text style={styles.name}>
           Stacey's Money
         </Text>
