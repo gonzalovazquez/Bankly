@@ -8,8 +8,10 @@
     "lint": " node ./node_modules/eslint-watch/bin/esw -w --ext .js,.jsx App"
   },
   "dependencies": {
+    "prop-types": "^15.5.6",
     "react": "16.0.0-alpha.6",
-    "react-native": "0.43.2"
+    "react-native": "0.43.2",
+    "react-navigation": "git+https://github.com/react-community/react-navigation.git"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.1",
