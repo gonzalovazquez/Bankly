@@ -1,8 +1,16 @@
 {
   "parser": "babel-eslint",
   "extends": "airbnb",
+   "plugins": [
+    "react",
+    "react-native"
+  ],
+  "ecmaFeatures": {
+    "jsx": true
+  },
   "rules": {
-    "max-len": [1, 120, 2, {"ignoreComments": true}]
+    "max-len": [1, 120, 2, {"ignoreComments": true}],
+    "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx"] }]
   },
   "globals": {
     "$": true,
