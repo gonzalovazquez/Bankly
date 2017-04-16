@@ -21,6 +21,10 @@ class Dashboard extends Component {
     const { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
+         <View style={{width: '100%', height: 50, backgroundColor: 'powderblue'}}>
+           <Text>Marie's Money</Text>
+          <Text>$40</Text>
+        </View>
         <TouchableHighlight
           onPress={() => navigate('Chores')}
           underlayColor="#2e6336"
