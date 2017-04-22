@@ -7,7 +7,15 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#1A5339',
   },
-  icon: {
+  tilesContainer: {
+    flexDirection: 'row',
+    height: '50%',
+  },
+  tiles: {
+    width: '50%',
+    height: '100%',
+  },
+  avatar: {
     height: 50,
     width: 50,
   },
@@ -21,15 +29,19 @@ class Dashboard extends Component {
     const { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
-         <View style={{ width: '100%', height: 50, backgroundColor: 'powderblue' }}>
-           <Text>Marie's Money</Text>
+        <View style={{ width: '100%', height: 50, backgroundColor: 'powderblue' }}>
+          <Text>Marie's Money</Text>
           <Text>$40</Text>
+          <Image
+            source={require('./assets/Avatar.jpg')}
+            style={styles.avatar}
+          />
         </View>
-        <View style={{ flexDirection: 'row', height: '50%' }}>
+        <View style={styles.tilesContainer}>
           <TouchableHighlight
             onPress={() => navigate('Chores')}
             underlayColor="#2e6336"
-            style={{ width: '50%', height: '100%', backgroundColor: 'red' }}
+            style={styles.tile}
           >
             <View>
               <Text>Chores & Allowance</Text>
@@ -38,18 +50,18 @@ class Dashboard extends Component {
           <TouchableHighlight
             onPress={() => navigate('Account')}
             underlayColor="#2e6336"
-            style={{ width: '50%', height: '100%', backgroundColor: 'yellow' }}
+            style={styles.tile}
           >
             <View>
               <Text>Wishlist</Text>
             </View>
           </TouchableHighlight>
         </View>
-        <View style={{ flexDirection: 'row', height: '50%' }}>
+        <View style={styles.tilesContainer}>
           <TouchableHighlight
             onPress={() => navigate('Wishlist')}
             underlayColor="#2e6336"
-            style={{ width: '50%', height: '100%', backgroundColor: 'green' }}
+            style={styles.tile}
           >
             <View>
               <Text>Put Money In</Text>
@@ -58,7 +70,7 @@ class Dashboard extends Component {
           <TouchableHighlight
             onPress={() => navigate('Wishlist')}
             underlayColor="#2e6336"
-            style={{ width: '50%', height: '100%', backgroundColor: 'blue' }}
+            style={styles.tile}
           >
             <View>
               <Text>Get Money Out</Text>
