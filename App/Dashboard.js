@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, TouchableHighlight, Text } from 'react-native';
+import { StyleSheet, View, TouchableHighlight, Text, Image } from 'react-native';
 import PropTypes from 'prop-types';
 
 const styles = StyleSheet.create({
