@@ -21,34 +21,50 @@ class Dashboard extends Component {
     const { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
-         <View style={{width: '100%', height: 50, backgroundColor: 'powderblue'}}>
+         <View style={{ width: '100%', height: 50, backgroundColor: 'powderblue' }}>
            <Text>Marie's Money</Text>
           <Text>$40</Text>
         </View>
-        <TouchableHighlight
-          onPress={() => navigate('Chores')}
-          underlayColor="#2e6336"
-        >
-          <View>
-            <Text>Chores & Allowance</Text>
-          </View>
-        </TouchableHighlight>
-        <TouchableHighlight
-          onPress={() => navigate('Account')}
-          underlayColor="#2e6336"
-        >
-          <View>
-            <Text>Account</Text>
-          </View>
-        </TouchableHighlight>
-        <TouchableHighlight
-          onPress={() => navigate('Wishlist')}
-          underlayColor="#2e6336"
-        >
-          <View>
-            <Text>Wishlist</Text>
-          </View>
-        </TouchableHighlight>
+        <View style={{ flexDirection: 'row', height: '50%' }}>
+          <TouchableHighlight
+            onPress={() => navigate('Chores')}
+            underlayColor="#2e6336"
+            style={{ width: '50%', height: '100%', backgroundColor: 'red' }}
+          >
+            <View>
+              <Text>Chores & Allowance</Text>
+            </View>
+          </TouchableHighlight>
+          <TouchableHighlight
+            onPress={() => navigate('Account')}
+            underlayColor="#2e6336"
+            style={{ width: '50%', height: '100%', backgroundColor: 'yellow' }}
+          >
+            <View>
+              <Text>Wishlist</Text>
+            </View>
+          </TouchableHighlight>
+        </View>
+        <View style={{ flexDirection: 'row', height: '50%' }}>
+          <TouchableHighlight
+            onPress={() => navigate('Wishlist')}
+            underlayColor="#2e6336"
+            style={{ width: '50%', height: '100%', backgroundColor: 'green' }}
+          >
+            <View>
+              <Text>Put Money In</Text>
+            </View>
+          </TouchableHighlight>
+          <TouchableHighlight
+            onPress={() => navigate('Wishlist')}
+            underlayColor="#2e6336"
+            style={{ width: '50%', height: '100%', backgroundColor: 'blue' }}
+          >
+            <View>
+              <Text>Get Money Out</Text>
+            </View>
+          </TouchableHighlight>
+        </View>
       </View>
     );
   }
