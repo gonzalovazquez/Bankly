@@ -8,9 +8,9 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   logo: {
-    height: 140,
-    width: 400,
-    marginTop: '50%',
+    height: 400,
+    width: '100%',
+    marginTop: '10%',
   },
   title: {
     fontSize: 20,
@@ -29,7 +29,7 @@ class SplashScreen extends Component {
     return (
       <View style={styles.container}>
         <Image
-          source={require('./assets/Bankly_logo.png')}
+          source={require('./assets/Banky_logo_2.png')}
           style={styles.logo}
         />
         <Text style={styles.title}>

@@ -7,13 +7,20 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#1A5339',
   },
+  header: {
+    width: '100%',
+    height: '10%',
+    backgroundColor: 'powderblue',
+  },
   tilesContainer: {
     flexDirection: 'row',
-    height: '50%',
+    height: '40%',
+    marginTop: '10%',
   },
   tiles: {
     width: '50%',
     height: '100%',
+    backgroundColor: 'red',
   },
   avatar: {
     height: 50,
@@ -29,19 +36,19 @@ class Dashboard extends Component {
     const { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
-        <View style={{ width: '100%', height: 50, backgroundColor: 'powderblue' }}>
-          <Text>Marie's Money</Text>
-          <Text>$40</Text>
+        <View style={styles.header}>
           <Image
             source={require('./assets/Avatar.jpg')}
             style={styles.avatar}
           />
+          <Text>Marie's Money</Text>
+          <Text>$40</Text>
         </View>
         <View style={styles.tilesContainer}>
           <TouchableHighlight
             onPress={() => navigate('Chores')}
             underlayColor="#2e6336"
-            style={styles.tile}
+            style={styles.tiles}
           >
             <View>
               <Text>Chores & Allowance</Text>
@@ -50,7 +57,7 @@ class Dashboard extends Component {
           <TouchableHighlight
             onPress={() => navigate('Account')}
             underlayColor="#2e6336"
-            style={styles.tile}
+            style={styles.tiles}
           >
             <View>
               <Text>Wishlist</Text>
@@ -61,7 +68,7 @@ class Dashboard extends Component {
           <TouchableHighlight
             onPress={() => navigate('Wishlist')}
             underlayColor="#2e6336"
-            style={styles.tile}
+            style={styles.tiles}
           >
             <View>
               <Text>Put Money In</Text>
@@ -70,7 +77,7 @@ class Dashboard extends Component {
           <TouchableHighlight
             onPress={() => navigate('Wishlist')}
             underlayColor="#2e6336"
-            style={styles.tile}
+            style={styles.tiles}
           >
             <View>
               <Text>Get Money Out</Text>
