@@ -13,15 +13,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'powderblue',
     flexDirection: 'row',
   },
-  tilesContainer: {
-    flexDirection: 'row',
-    height: '50%',
-  },
-  tiles: {
-    width: '50%',
-    height: '100%',
-    backgroundColor: 'red',
-  },
   avatarContainer: {
     width: '30%',
     backgroundColor: '#fff',
@@ -44,6 +35,26 @@ const styles = StyleSheet.create({
   balanceText: {
     color: '#333',
     fontSize: 60,
+  },
+  tilesContainer: {
+    flexDirection: 'row',
+    height: '42%',
+  },
+  tiles: {
+    width: '50%',
+    height: '100%',
+    backgroundColor: '#fff',
+    padding: 50,
+  },
+  icons: {
+    height: 100,
+    width: 100,
+  },
+  links: {
+    width: 100,
+    textAlign: 'center',
+    paddingTop: 20,
+    fontSize: 15,
   }
 });
 
@@ -74,7 +85,11 @@ class Dashboard extends Component {
             style={styles.tiles}
           >
             <View>
-              <Text>Chores & Allowance</Text>
+              <Image
+                source={require('./assets/001-arrow.png')}
+                style={styles.icons}
+              />
+              <Text style={styles.links}>Chores & Allowance</Text>
             </View>
           </TouchableHighlight>
           <TouchableHighlight
@@ -83,7 +98,11 @@ class Dashboard extends Component {
             style={styles.tiles}
           >
             <View>
-              <Text>Wishlist</Text>
+              <Image
+                source={require('./assets/002-arrows.png')}
+                style={styles.icons}
+              />
+              <Text style={styles.links}>Wishlist</Text>
             </View>
           </TouchableHighlight>
         </View>
@@ -94,7 +113,11 @@ class Dashboard extends Component {
             style={styles.tiles}
           >
             <View>
-              <Text>Put Money In</Text>
+              <Image
+                source={require('./assets/003-clock.png')}
+                style={styles.icons}
+              />
+              <Text style={styles.links}>Put Money In</Text>
             </View>
           </TouchableHighlight>
           <TouchableHighlight
@@ -103,7 +126,11 @@ class Dashboard extends Component {
             style={styles.tiles}
           >
             <View>
-              <Text>Get Money Out</Text>
+              <Image
+                source={require('./assets/001-arrow.png')}
+                style={styles.icons}
+              />
+              <Text style={styles.links}>Get Money Out</Text>
             </View>
           </TouchableHighlight>
         </View>
