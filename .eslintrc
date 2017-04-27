@@ -16,6 +16,7 @@
     "$": true,
     "document": true,
     "window": true,
-    "localStorage": true
+    "localStorage": true,
+    "require": true
   }
 }

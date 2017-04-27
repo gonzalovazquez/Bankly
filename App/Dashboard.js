@@ -9,23 +9,42 @@ const styles = StyleSheet.create({
   },
   header: {
     width: '100%',
-    height: '10%',
+    height: 100,
     backgroundColor: 'powderblue',
+    flexDirection: 'row',
   },
   tilesContainer: {
     flexDirection: 'row',
-    height: '40%',
-    marginTop: '10%',
+    height: '50%',
   },
   tiles: {
     width: '50%',
     height: '100%',
     backgroundColor: 'red',
   },
-  avatar: {
-    height: 50,
-    width: 50,
+  avatarContainer: {
+    width: '30%',
+    backgroundColor: '#fff',
   },
+  avatar: {
+    height: 100,
+    width: 100,
+    marginLeft: 5,
+  },
+  balance: {
+    width: '70%',
+    textAlign: 'left',
+    backgroundColor: '#fff',
+    padding: 10,
+  },
+  userName: {
+    color: '#333',
+    fontSize: 15,
+  },
+  balanceText: {
+    color: '#333',
+    fontSize: 60,
+  }
 });
 
 class Dashboard extends Component {
@@ -37,12 +56,16 @@ class Dashboard extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.header}>
-          <Image
-            source={require('./assets/Avatar.jpg')}
-            style={styles.avatar}
-          />
-          <Text>Marie's Money</Text>
-          <Text>$40</Text>
+          <View style={styles.avatarContainer}>
+            <Image
+              source={require('./assets/Avatar.jpg')}
+              style={styles.avatar}
+            />
+          </View>
+          <View style={styles.balance}>
+            <Text style={styles.userName}>Marie's Money</Text>
+            <Text style={styles.balanceText}>$40.00</Text>
+          </View>
         </View>
         <View style={styles.tilesContainer}>
           <TouchableHighlight
