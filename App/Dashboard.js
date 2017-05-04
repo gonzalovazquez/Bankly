@@ -36,13 +36,6 @@ const styles = StyleSheet.create({
       width: 0
     },
   },
-  icons: {
-    height: 100,
-    width: 100,
-    justifyContent: 'center',
-    marginLeft: 15,
-    marginTop: 2,
-  },
   links: {
     paddingTop: 10,
     fontSize: 16,
@@ -64,14 +57,14 @@ class Dashboard extends Component {
           <View style={styles.tilesContainer}>
             <TouchableHighlight
               onPress={() => navigate('Chores')}
-              underlayColor="#2e6336"
+              underlayColor="#B9B9B9"
               style={styles.tiles}
             >
               <View style={styles.button}>
                 <View style={styles.iconContainer}>
                   <Image
-                    source={require('./assets/001-arrow.png')}
-                    style={styles.icons}
+                    source={require('./assets/Dashboard/MyMoneyIcon.png')}
+                    style={{  height: 94, width: 122, marginLeft: 4 }}
                   />
                 </View>
                 <Text style={styles.links}>My Money</Text>
@@ -79,14 +72,14 @@ class Dashboard extends Component {
             </TouchableHighlight>
             <TouchableHighlight
               onPress={() => navigate('Account')}
-              underlayColor="#2e6336"
+              underlayColor="#B9B9B9"
               style={styles.tiles}
             >
               <View style={styles.button}>
                 <View style={styles.iconContainer}>
                   <Image
-                    source={require('./assets/001-arrow.png')}
-                    style={styles.icons}
+                    source={require('./assets/Dashboard/ChoresIcon.png')}
+                    style={{  height: 102, width: 110, marginLeft: 10 }}
                   />
                 </View>
                 <Text style={styles.links}>Chores</Text>
@@ -96,14 +89,14 @@ class Dashboard extends Component {
           <View style={styles.tilesContainer}>
             <TouchableHighlight
               onPress={() => navigate('Wishlist')}
-              underlayColor="#2e6336"
+              underlayColor="#B9B9B9"
               style={styles.tiles}
             >
               <View style={styles.button}>
                 <View style={styles.iconContainer}>
                   <Image
-                    source={require('./assets/001-arrow.png')}
-                    style={styles.icons}
+                    source={require('./assets/Dashboard/MoneyAddIcon.png')}
+                    style={{  height: 90, width: 116, marginLeft: 10, marginTop: 8 }}
                   />
                 </View>
                 <Text style={styles.links}>Add</Text>
@@ -111,14 +104,14 @@ class Dashboard extends Component {
             </TouchableHighlight>
             <TouchableHighlight
               onPress={() => navigate('Wishlist')}
-              underlayColor="#2e6336"
+              underlayColor="#B9B9B9"
               style={styles.tiles}
             >
               <View style={styles.button}>
                 <View style={styles.iconContainer}>
                   <Image
-                    source={require('./assets/001-arrow.png')}
-                    style={styles.icons}
+                    source={require('./assets/Dashboard/MoneyWithdrawIcon.png')}
+                    style={{  height: 90, width: 124, marginLeft: 2, marginTop: 8 }}
                   />
                 </View>
                 <Text style={styles.links}>Withdraw</Text>
@@ -128,14 +121,14 @@ class Dashboard extends Component {
           <View style={styles.tilesContainer}>
             <TouchableHighlight
               onPress={() => navigate('Wishlist')}
-              underlayColor="#2e6336"
+              underlayColor="#B9B9B9"
               style={styles.tiles}
             >
               <View style={styles.button}>
                 <View style={styles.iconContainer}>
                   <Image
-                    source={require('./assets/001-arrow.png')}
-                    style={styles.icons}
+                    source={require('./assets/Dashboard/WishlistIcon.png')}
+                    style={{  height: 100, width: 89, marginLeft: 28 }}
                   />
                 </View>
                 <Text style={styles.links}>Wishlist</Text>
@@ -143,14 +136,14 @@ class Dashboard extends Component {
             </TouchableHighlight>
             <TouchableHighlight
               onPress={() => navigate('Wishlist')}
-              underlayColor="#2e6336"
+              underlayColor="#B9B9B9"
               style={styles.tiles}
             >
               <View style={styles.button}>
                 <View style={styles.iconContainer}>
                   <Image
-                    source={require('./assets/001-arrow.png')}
-                    style={styles.icons}
+                    source={require('./assets/Dashboard/SettingsIcon.png')}
+                    style={{  height: 100, width: 100, marginLeft: 14 }}
                   />
                 </View>
                 <Text style={styles.links}>Settings</Text>
