@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, TouchableHighlight, Text, Image } from 'react-native';
+import { StyleSheet, View, TouchableOpacity, Text, Image } from 'react-native';
 import PropTypes from 'prop-types';
 import Header from './Components/Header';
 
@@ -24,20 +24,20 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   iconContainer: {
-    height: 104,
+    height: 106,
     width: 130,
     backgroundColor: '#fff',
     borderRadius: 10,
     shadowColor: "#B9B9B9",
     shadowOpacity: 0.8,
-    shadowRadius: 2,
+    shadowRadius: 4,
     shadowOffset: {
-      height: 1,
+      height: 2,
       width: 0
     },
   },
   links: {
-    paddingTop: 10,
+    marginTop: 10,
     fontSize: 16,
     color: '#9B9B9B',
     textAlign: 'center',
@@ -55,7 +55,7 @@ class Dashboard extends Component {
         <Header />
         <View style={styles.innerContainer}>
           <View style={styles.tilesContainer}>
-            <TouchableHighlight
+            <TouchableOpacity
               onPress={() => navigate('Chores')}
               underlayColor="#B9B9B9"
               style={styles.tiles}
@@ -69,8 +69,8 @@ class Dashboard extends Component {
                 </View>
                 <Text style={styles.links}>My Money</Text>
               </View>
-            </TouchableHighlight>
-            <TouchableHighlight
+            </TouchableOpacity>
+            <TouchableOpacity
               onPress={() => navigate('Account')}
               underlayColor="#B9B9B9"
               style={styles.tiles}
@@ -84,10 +84,10 @@ class Dashboard extends Component {
                 </View>
                 <Text style={styles.links}>Chores</Text>
               </View>
-            </TouchableHighlight>
+            </TouchableOpacity>
           </View>
           <View style={styles.tilesContainer}>
-            <TouchableHighlight
+            <TouchableOpacity
               onPress={() => navigate('Wishlist')}
               underlayColor="#B9B9B9"
               style={styles.tiles}
@@ -101,8 +101,8 @@ class Dashboard extends Component {
                 </View>
                 <Text style={styles.links}>Add</Text>
               </View>
-            </TouchableHighlight>
-            <TouchableHighlight
+            </TouchableOpacity>
+            <TouchableOpacity
               onPress={() => navigate('Wishlist')}
               underlayColor="#B9B9B9"
               style={styles.tiles}
@@ -116,10 +116,10 @@ class Dashboard extends Component {
                 </View>
                 <Text style={styles.links}>Withdraw</Text>
               </View>
-            </TouchableHighlight>
+            </TouchableOpacity>
           </View>
           <View style={styles.tilesContainer}>
-            <TouchableHighlight
+            <TouchableOpacity
               onPress={() => navigate('Wishlist')}
               underlayColor="#B9B9B9"
               style={styles.tiles}
@@ -133,8 +133,8 @@ class Dashboard extends Component {
                 </View>
                 <Text style={styles.links}>Wishlist</Text>
               </View>
-            </TouchableHighlight>
-            <TouchableHighlight
+            </TouchableOpacity>
+            <TouchableOpacity
               onPress={() => navigate('Wishlist')}
               underlayColor="#B9B9B9"
               style={styles.tiles}
@@ -148,7 +148,7 @@ class Dashboard extends Component {
                 </View>
                 <Text style={styles.links}>Settings</Text>
               </View>
-            </TouchableHighlight>
+            </TouchableOpacity>
           </View>
         </View>
       </View>
