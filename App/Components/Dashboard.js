@@ -56,7 +56,7 @@ class Dashboard extends Component {
         <View style={styles.innerContainer}>
           <View style={styles.tilesContainer}>
             <TouchableOpacity
-              onPress={() => navigate('Chores')}
+              onPress={() => navigate('MyMoney')}
               underlayColor="#B9B9B9"
               style={styles.tiles}
             >
@@ -71,7 +71,7 @@ class Dashboard extends Component {
               </View>
             </TouchableOpacity>
             <TouchableOpacity
-              onPress={() => navigate('Account')}
+              onPress={() => navigate('Chores')}
               underlayColor="#B9B9B9"
               style={styles.tiles}
             >
@@ -88,7 +88,7 @@ class Dashboard extends Component {
           </View>
           <View style={styles.tilesContainer}>
             <TouchableOpacity
-              onPress={() => navigate('Wishlist')}
+              onPress={() => navigate('Add')}
               underlayColor="#B9B9B9"
               style={styles.tiles}
             >
@@ -103,7 +103,7 @@ class Dashboard extends Component {
               </View>
             </TouchableOpacity>
             <TouchableOpacity
-              onPress={() => navigate('Wishlist')}
+              onPress={() => navigate('Withdraw')}
               underlayColor="#B9B9B9"
               style={styles.tiles}
             >
@@ -135,7 +135,7 @@ class Dashboard extends Component {
               </View>
             </TouchableOpacity>
             <TouchableOpacity
-              onPress={() => navigate('Wishlist')}
+              onPress={() => navigate('Settings')}
               underlayColor="#B9B9B9"
               style={styles.tiles}
             >
