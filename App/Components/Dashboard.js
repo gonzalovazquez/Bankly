@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, TouchableOpacity, Text, Image } from 'react-native';
 import PropTypes from 'prop-types';
-import Header from './Components/Header';
+import Header from './Header';
 
 const styles = StyleSheet.create({
   container: {
@@ -63,7 +63,7 @@ class Dashboard extends Component {
               <View style={styles.button}>
                 <View style={styles.iconContainer}>
                   <Image
-                    source={require('./assets/Dashboard/MyMoneyIcon.png')}
+                    source={require('../assets/Dashboard/MyMoneyIcon.png')}
                     style={{  height: 94, width: 122, marginLeft: 4 }}
                   />
                 </View>
@@ -78,7 +78,7 @@ class Dashboard extends Component {
               <View style={styles.button}>
                 <View style={styles.iconContainer}>
                   <Image
-                    source={require('./assets/Dashboard/ChoresIcon.png')}
+                    source={require('../assets/Dashboard/ChoresIcon.png')}
                     style={{  height: 102, width: 110, marginLeft: 10 }}
                   />
                 </View>
@@ -95,7 +95,7 @@ class Dashboard extends Component {
               <View style={styles.button}>
                 <View style={styles.iconContainer}>
                   <Image
-                    source={require('./assets/Dashboard/MoneyAddIcon.png')}
+                    source={require('../assets/Dashboard/MoneyAddIcon.png')}
                     style={{  height: 90, width: 116, marginLeft: 10, marginTop: 8 }}
                   />
                 </View>
@@ -110,7 +110,7 @@ class Dashboard extends Component {
               <View style={styles.button}>
                 <View style={styles.iconContainer}>
                   <Image
-                    source={require('./assets/Dashboard/MoneyWithdrawIcon.png')}
+                    source={require('../assets/Dashboard/MoneyWithdrawIcon.png')}
                     style={{  height: 90, width: 124, marginLeft: 2, marginTop: 8 }}
                   />
                 </View>
@@ -127,7 +127,7 @@ class Dashboard extends Component {
               <View style={styles.button}>
                 <View style={styles.iconContainer}>
                   <Image
-                    source={require('./assets/Dashboard/WishlistIcon.png')}
+                    source={require('../assets/Dashboard/WishlistIcon.png')}
                     style={{  height: 100, width: 89, marginLeft: 28 }}
                   />
                 </View>
@@ -142,7 +142,7 @@ class Dashboard extends Component {
               <View style={styles.button}>
                 <View style={styles.iconContainer}>
                   <Image
-                    source={require('./assets/Dashboard/SettingsIcon.png')}
+                    source={require('../assets/Dashboard/SettingsIcon.png')}
                     style={{  height: 100, width: 100, marginLeft: 14 }}
                   />
                 </View>
