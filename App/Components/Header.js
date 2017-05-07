@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, Text, Image } from 'react-native';
+import PropTypes from 'prop-types';
 
 const styles = StyleSheet.create({
   header: {
@@ -36,7 +37,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const Header = () => (
+const Header = (props) => (
   <View style={styles.header}>
     <View style={styles.avatarContainer}>
       <Image
@@ -46,9 +47,13 @@ const Header = () => (
       <Text style={styles.userName}>Marie's Money</Text>
     </View>
     <View style={styles.balance}>
-      <Text style={styles.balanceText}>$40.00</Text>
+      <Text style={styles.balanceText}>${(props.amount).toFixed(2)}</Text>
     </View>
   </View>
 );
+
+Header.propTypes = {
+  navigation: PropTypes.number.isRequired,
+};
 
 export default Header;

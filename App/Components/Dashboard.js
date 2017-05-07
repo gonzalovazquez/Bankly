@@ -52,7 +52,7 @@ class Dashboard extends Component {
     const { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
-        <Header />
+        <Header amount={40} />
         <View style={styles.innerContainer}>
           <View style={styles.tilesContainer}>
             <TouchableOpacity

@@ -1,0 +1,13 @@
+{
+  "wishlist" : [
+    {
+      "id": "1",
+      "customer_id": "1",
+      "name": "Nintendo 3DS",
+      "completed": false,
+      "due-date": "02/01/2017",
+      "cost": "123",
+      "budgeted": "14"
+    }
+  ]
+}

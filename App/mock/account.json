@@ -1,0 +1,36 @@
+[{
+  "customers": {
+    "id": "1",
+    "first-name": "marie",
+    "last-name": "bardari",
+    "email": "mariebardari@gmail.com"
+  },
+  "accounts": [
+    {
+      "account": {
+        "id": "1",
+        "customer_id": "1",
+        "account_type": "CHEQUINGS",
+        "balance": 100
+      },
+      "transactions": [
+        {
+          "id": "1",
+          "account_id": "1",
+          "transaction_type": "CREDIT",
+          "category": "Wishlist",
+          "amount": 50,
+          "date": "01/01/1999"
+        },
+        {
+          "id": "2",
+          "account_id": "1",
+          "transaction_type": "DEBIT",
+          "category": "Chore",
+          "amount": 20,
+          "date": "01/01/2000"
+        }
+      ]
+    }
+  ]
+}]

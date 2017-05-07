@@ -20,14 +20,14 @@ import Settings from './App/Components/ActionComponents/Settings';
 
 
 const Bankly = StackNavigator({
-  //Home: { screen: SplashScreen },
-  Home: { screen: LoginScreen },
+ // Home: { screen: SplashScreen },
   // User Authenticated
+  Home: { screen: MyMoney },
   Login: { screen: LoginScreen },
   SignUp: { screen: SignUpScreen },
   Dashboard: { screen: Dashboard },
   // Action Components
-  MyMoney: { screen: MyMoney },
+  //MyMoney: { screen: MyMoney },
   Chores: { screen: Chores },
   Add: { screen: Add },
   Withdraw: { screen: Withdraw },

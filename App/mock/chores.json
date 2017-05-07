@@ -1,0 +1,18 @@
+{
+  "chores" : [
+    {
+      "id": "1",
+      "customer_id": "1",
+      "name": "Clean litterbox",
+      "completed": false,
+      "due-date": "02/01/2017"
+    },
+    {
+      "id": "2",
+      "customer_id": "1",
+      "name": "Take out garbage",
+      "completed": true,
+      "due-date": "02/02/2017"
+    }
+  ]
+}
