@@ -11,7 +11,6 @@ class Chores extends Component {
   render() {
     return (
       <View>
-        <Text>Balance</Text>
         <Text>Chores</Text>
       </View>
     );
