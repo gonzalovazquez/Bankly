@@ -6,7 +6,7 @@ import {
 
 class Account extends Component {
   static navigationOptions = {
-    title: 'Account',
+    title: 'My Money',
   };
   render() {
     return (

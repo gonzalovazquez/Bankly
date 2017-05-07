@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text, Image, TouchableHighlight } from 'react-native';
+import PropTypes from 'prop-types';
 
 const styles = StyleSheet.create({
   container: {
@@ -19,7 +20,7 @@ const styles = StyleSheet.create({
   buttonText: {
     fontSize: 18,
     color: '#fff',
-    alignSelf: 'center'
+    alignSelf: 'center',
   },
   button: {
     width: 287,
@@ -36,13 +37,13 @@ const styles = StyleSheet.create({
   },
 });
 
-class Login extends Component{
-  signIn(){
+class Signup extends Component {
+  signIn() {
     alert('sign In');
   }
   render() {
     const { navigate } = this.props.navigation;
-    return(
+    return (
       <View style={styles.container}>
         <Image
           source={require('../assets/Banky_logo_2.png')}
@@ -51,30 +52,37 @@ class Login extends Component{
         <TouchableHighlight
           style={styles.button}
           onPress={() => this.signIn}
-          underlayColor="white">
-            <Text style={styles.buttonText}>
-              Email
-            </Text>
+          underlayColor="white"
+        >
+          <Text style={styles.buttonText}>
+            Email
+          </Text>
         </TouchableHighlight>
         <TouchableHighlight
           style={styles.button}
-          onPress={() => signIn}
-          underlayColor="white">
-            <Text style={styles.buttonText}>
-              Password
-            </Text>
+          onPress={() => this.signIn}
+          underlayColor="white"
+        >
+          <Text style={styles.buttonText}>
+            Password
+          </Text>
         </TouchableHighlight>
         <TouchableHighlight
           style={styles.button}
           onPress={() => navigate('Dashboard')}
-          underlayColor="white">
-            <Text style={styles.buttonText}>
-              Login
-            </Text>
+          underlayColor="white"
+        >
+          <Text style={styles.buttonText}>
+            Login
+          </Text>
         </TouchableHighlight>
       </View>
     );
   }
+}
+
+Signup.propTypes = {
+  navigation: PropTypes.object.isRequired,
 };
 
-module.exports = Login;
+module.exports = Signup;
