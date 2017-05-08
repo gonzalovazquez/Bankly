@@ -3,9 +3,8 @@ import {
   View,
   Text,
   StyleSheet,
-  Image,
   TextInput,
-  TouchableOpacity
+  TouchableOpacity,
 } from 'react-native';
 
 const styles = StyleSheet.create({
@@ -60,7 +59,7 @@ class Add extends Component {
   };
   constructor(props) {
     super(props);
-    this.state = { 
+    this.state = {
       category: 'Gift, lunch money, chores, etc',
       amount: 'eg. 10',
     };
@@ -72,13 +71,13 @@ class Add extends Component {
         <Text> Category: </Text>
         <TextInput
           style={styles.input}
-          onChangeText={(category) => this.setState({category})}
+          onChangeText={(category) => this.setState({ category })}
           value={this.state.category}
         />
         <Text> Amount: </Text>
         <TextInput
           style={styles.input}
-          onChangeText={(amount) => this.setState({amount})}
+          onChangeText={(amount) => this.setState({ amount })}
           value={this.state.amount}
         />
         <View style={styles.centerItems}>
@@ -89,6 +88,7 @@ class Add extends Component {
           </TouchableOpacity>
           <Text style={styles.quote}>
             “Never spend your money before you have earned it.”
+            -Thomas Jefferson
           </Text>
         </View>
       </View>

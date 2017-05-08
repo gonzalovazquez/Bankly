@@ -76,21 +76,21 @@ class Account extends Component {
     };
   }
   render() {
-    const list = this.state.account.map((item, index) => {
+    const list = this.state.account.map((item) => {
       return item.accounts[0].transactions.map((value, innerIndex) => (
         <View key={innerIndex} style={styles.innerContainer}>
           <View style={styles.left}>
-          {
-            (value.transaction_type === 'DEBIT') ?
-              <Image
-                source={require('../../assets/MyMoney/MoneyAddedIcon.png')}
-                style={styles.transactions}
-              /> :
-              <Image
-                source={require('../../assets/MyMoney/MoneyWithdrawnIcon.png')}
-                style={styles.transactions}
-              />
-          }
+            {
+              (value.transaction_type === 'DEBIT') ?
+                <Image
+                  source={require('../../assets/MyMoney/MoneyAddedIcon.png')}
+                  style={styles.transactions}
+                /> :
+                <Image
+                  source={require('../../assets/MyMoney/MoneyWithdrawnIcon.png')}
+                  style={styles.transactions}
+                />
+            }
           </View>
           <View style={styles.middle}>
             <Text

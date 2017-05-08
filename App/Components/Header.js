@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, Text, Image } from 'react-native';
+import PropTypes from 'prop-types';
 
 const styles = StyleSheet.create({
   header: {
@@ -50,5 +51,9 @@ const Header = (props) => (
     </View>
   </View>
 );
+
+Header.propTypes = {
+  amount: PropTypes.number.isRequired,
+};
 
 export default Header;
