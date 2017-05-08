@@ -11,7 +11,7 @@
         "id": "1",
         "customer_id": "1",
         "account_type": "CHEQUINGS",
-        "balance": 100
+        "balance": 40
       },
       "transactions": [
         {
@@ -33,17 +33,17 @@
         {
           "id": "3",
           "account_id": "1",
-          "transaction_type": "DEBIT",
-          "category": "Chore",
+          "transaction_type": "CREDIT",
+          "category": "Food",
           "amount": 30,
           "date": "03/14/2017"
         },
         {
           "id": "4",
           "account_id": "1",
-          "transaction_type": "CREDIT",
-          "category": "Food",
-          "amount": 60,
+          "transaction_type": "DEBIT",
+          "category": "Allowance",
+          "amount": 100,
           "date": "03/12/2017"
         }
       ]

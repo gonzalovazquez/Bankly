@@ -12,6 +12,8 @@ import account from '../../mock/account.json';
 
 const styles = StyleSheet.create({
   container: {
+    top: 20,
+    height: '100%',
     backgroundColor: '#fff',
     borderRadius: 10,
     marginLeft: 20,
@@ -54,10 +56,12 @@ const styles = StyleSheet.create({
     height: 58,
   },
   debit: {
-    color: 'green',
+    color: '#91E565',
+    fontWeight: '700',
   },
   credit: {
-    color: 'red',
+    color: '#D0011B',
+    fontWeight: '700',
   },
 });
 
@@ -105,7 +109,7 @@ class Account extends Component {
     });
     return (
       <View style={styles.container}>
-        <Header amount={40} />
+        <Header amount={this.state.account[0].accounts[0].account.balance} />
         <ScrollView>
           {list}
         </ScrollView>
