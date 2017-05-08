@@ -29,7 +29,7 @@ class SplashScreen extends Component {
     return (
       <View style={styles.container}>
         <Image
-          source={require('./assets/Banky_logo_2.png')}
+          source={require('../assets/Banky_logo_2.png')}
           style={styles.logo}
         />
         <Text style={styles.title}>
