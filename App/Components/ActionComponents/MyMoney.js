@@ -2,30 +2,49 @@ import React, { Component } from 'react';
 import {
   View,
   Text,
-  ListView,
+  ScrollView,
+  StyleSheet,
 } from 'react-native';
 
 import Header from '../Header';
+import account from '../../mock/account.json';
+
+const styles = StyleSheet.create({
+  header: {
+    width: '100%',
+    height: 120,
+    flexDirection: 'row',
+    backgroundColor: '#fff',
+  },
+});
 
 class Account extends Component {
   static navigationOptions = {
     title: 'My Money',
   };
-  constructor() {
-    super();
-    const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
+  constructor(props) {
+    super(props);
     this.state = {
-      dataSource: ds.cloneWithRows(['row 1', 'row 2']),
+      account,
     };
   }
   render() {
+    const list = this.state.account.map((item, index) => {
+      return item.accounts[0].transactions.map((value) => (
+        <View key={index}>
+          <Text>{value.transaction_type}</Text>
+          <Text>${(value.amount).toFixed(2)}</Text>
+          <Text>{value.category}</Text>
+          <Text>{value.date}</Text>
+        </View>
+        ));
+    });
     return (
       <View>
         <Header amount={40} />
-        <ListView
-          dataSource={this.state.dataSource}
-          renderRow={(rowData) => <Text>{rowData}</Text>}
-        />
+        <ScrollView>
+          {list}
+        </ScrollView>
       </View>
     );
   }
