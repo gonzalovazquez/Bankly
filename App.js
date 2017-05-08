@@ -5,7 +5,7 @@ import {
 } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 
-import SplashScreen from './App/SplashScreen';
+import SplashScreen from './App/Components/SplashScreen';
 import LoginScreen from './App/Components/Login';
 import SignUpScreen from './App/Components/Signup';
 import Dashboard from './App/Components/Dashboard';
