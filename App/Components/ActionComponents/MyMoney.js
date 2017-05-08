@@ -11,9 +11,18 @@ import Header from '../Header';
 import account from '../../mock/account.json';
 
 const styles = StyleSheet.create({
+  innerContainer: {
+    backgroundColor: 'red',
+  },
   transactions: {
     width: 58,
     height: 58,
+  },
+  debit: {
+    color: 'green',
+  },
+  credit: {
+    color: 'red',
   },
 });
 
@@ -42,8 +51,11 @@ class Account extends Component {
                 style={styles.transactions}
               />
           }
-          <Text>{value.transaction_type}</Text>
-          <Text>${(value.amount).toFixed(2)}</Text>
+          <Text
+            style={value.transaction_type === 'DEBIT' ? styles.debit : styles.credit}
+          >
+            ${(value.amount).toFixed(2)}
+          </Text>
           <Text>{value.category}</Text>
           <Text>{value.date}</Text>
         </View>
@@ -52,7 +64,7 @@ class Account extends Component {
     return (
       <View>
         <Header amount={40} />
-        <ScrollView>
+        <ScrollView style={styles.innerContainer}>
           {list}
         </ScrollView>
       </View>
