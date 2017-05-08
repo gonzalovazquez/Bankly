@@ -11,8 +11,43 @@ import Header from '../Header';
 import account from '../../mock/account.json';
 
 const styles = StyleSheet.create({
+  container: {
+    backgroundColor: '#fff',
+    borderRadius: 10,
+    marginLeft: 20,
+    marginRight: 20,
+    paddingLeft: 10,
+    paddingRight: 10,
+    shadowColor: '#B9B9B9',
+    shadowOpacity: 0.8,
+    shadowRadius: 4,
+    shadowOffset: {
+      height: 2,
+      width: 0,
+    },
+  },
   innerContainer: {
-    backgroundColor: 'red',
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'stretch',
+  },
+  left: {
+    flex: 1,
+    flexBasis: 100,
+    paddingTop: 15,
+    paddingBottom: 15,
+  },
+  middle: {
+    flex: 2,
+    flexBasis: 140,
+    paddingTop: 15,
+    paddingBottom: 15,
+  },
+  right: {
+    flex: 3,
+    flexBasis: 100,
+    paddingTop: 15,
+    paddingBottom: 15,
   },
   transactions: {
     width: 58,
@@ -39,7 +74,8 @@ class Account extends Component {
   render() {
     const list = this.state.account.map((item, index) => {
       return item.accounts[0].transactions.map((value, innerIndex) => (
-        <View key={innerIndex}>
+        <View key={innerIndex} style={styles.innerContainer}>
+          <View style={styles.left}>
           {
             (value.transaction_type === 'DEBIT') ?
               <Image
@@ -51,20 +87,26 @@ class Account extends Component {
                 style={styles.transactions}
               />
           }
-          <Text
-            style={value.transaction_type === 'DEBIT' ? styles.debit : styles.credit}
-          >
-            ${(value.amount).toFixed(2)}
-          </Text>
-          <Text>{value.category}</Text>
-          <Text>{value.date}</Text>
+          </View>
+          <View style={styles.middle}>
+            <Text
+              style={value.transaction_type === 'DEBIT' ? styles.debit : styles.credit}
+            >
+              ${(value.amount).toFixed(2)}
+            </Text>
+            <Text>{value.category}</Text>
+            <Text>{value.date}</Text>
+          </View>
+          <View style={styles.right}>
+            <Text>${(value.amount).toFixed(2)}</Text>
+          </View>
         </View>
         ));
     });
     return (
-      <View>
+      <View style={styles.container}>
         <Header amount={40} />
-        <ScrollView style={styles.innerContainer}>
+        <ScrollView>
           {list}
         </ScrollView>
       </View>
