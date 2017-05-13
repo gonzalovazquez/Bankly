@@ -5,6 +5,7 @@ import {
   StyleSheet,
   TextInput,
   TouchableOpacity,
+  Image,
 } from 'react-native';
 
 const styles = StyleSheet.create({
@@ -25,12 +26,36 @@ const styles = StyleSheet.create({
       width: 0,
     },
   },
+  header: {
+    flexDirection: "row",
+    paddingTop: 20,
+    paddingBottom: 20,
+  },
+  textHeader: {
+    fontSize: 18,
+    fontWeight: "600",
+    width: '40%',
+    paddingLeft: 20,
+    paddingTop: 10,
+    
+  },
+  imageHeader: {
+    width: '50%',
+    paddingLeft: 16,
+  },
+  textInput: {
+    paddingTop: 10,
+    paddingBottom: 10,
+    fontSize: 16,
+    color: '#4A4A4A',
+  },
   input: {
     borderColor: '#DEE0DF',
     borderRadius: 10,
     borderWidth: 2,
     height: 40,
     padding: 10,
+    color: '#9B9B9B',
   },
   centerItems: {
     alignItems: 'center',
@@ -42,6 +67,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     justifyContent: 'center',
     alignItems: 'center',
+    marginTop: 40,
   },
   actionText: {
     fontSize: 16,
@@ -50,6 +76,9 @@ const styles = StyleSheet.create({
   },
   quote: {
     color: '#4A4A4A',
+    width: 220,
+    paddingTop: 20,
+    fontStyle: 'italic',
   },
 });
 
@@ -67,14 +96,22 @@ class Add extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Add Money</Text>
-        <Text> Category: </Text>
+        <View style={styles.header}>
+          <Text style={styles.textHeader}>Add Money</Text>
+          <View style={styles.imageHeader}>
+            <Image
+              source={require('../../assets/AddMoney/coinrow_1.png')}
+              style={{ height: 36, width: '100%' }}
+            />
+          </View>
+        </View>
+        <Text style={styles.textInput}> Category: </Text>
         <TextInput
           style={styles.input}
           onChangeText={(category) => this.setState({ category })}
           value={this.state.category}
         />
-        <Text> Amount: </Text>
+        <Text style={styles.textInput}> Amount: </Text>
         <TextInput
           style={styles.input}
           onChangeText={(amount) => this.setState({ amount })}
@@ -90,6 +127,10 @@ class Add extends Component {
             “Never spend your money before you have earned it.”
             -Thomas Jefferson
           </Text>
+          <Image
+            source={require('../../assets/AddMoney/SparklePiggy.png')}
+            style={{ height: '42%', width: '100%', resizeMode: 'contain' }}
+          />
         </View>
       </View>
     );
