@@ -11,7 +11,7 @@ import {
 const styles = StyleSheet.create({
   container: {
     top: 20,
-    height: '100%',
+    height: '94%',
     backgroundColor: '#fff',
     borderRadius: 10,
     marginLeft: 20,
@@ -42,6 +42,10 @@ const styles = StyleSheet.create({
   imageHeader: {
     width: '50%',
     paddingLeft: 16,
+  },
+  inputContainer:{
+    marginLeft: 20,
+    marginRight: 20,
   },
   textInput: {
     paddingTop: 10,
@@ -105,18 +109,20 @@ class Add extends Component {
             />
           </View>
         </View>
-        <Text style={styles.textInput}> Category: </Text>
-        <TextInput
-          style={styles.input}
-          onChangeText={(category) => this.setState({ category })}
-          value={this.state.category}
-        />
-        <Text style={styles.textInput}> Amount: </Text>
-        <TextInput
-          style={styles.input}
-          onChangeText={(amount) => this.setState({ amount })}
-          value={this.state.amount}
-        />
+        <View style={styles.inputContainer}>
+          <Text style={styles.textInput}> Category: </Text>
+          <TextInput
+            style={styles.input}
+            onChangeText={(category) => this.setState({ category })}
+            value={this.state.category}
+          />
+          <Text style={styles.textInput}> Amount: </Text>
+          <TextInput
+            style={styles.input}
+            onChangeText={(amount) => this.setState({ amount })}
+            value={this.state.amount}
+          />
+        </View>
         <View style={styles.centerItems}>
           <TouchableOpacity style={styles.button}>
             <Text style={styles.actionText}>
@@ -129,7 +135,7 @@ class Add extends Component {
           </Text>
           <Image
             source={require('../../assets/AddMoney/SparklePiggy.png')}
-            style={{ height: '42%', width: '100%', resizeMode: 'contain' }}
+            style={{ height: '36%', width: '100%', resizeMode: 'contain', marginTop: 10 }}
           />
         </View>
       </View>
