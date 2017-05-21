@@ -76,11 +76,10 @@ class Account extends Component {
     };
   }
   render() {
-    const list = this.state.account.map((item) => {
-      return item.accounts[0].transactions.map((value, innerIndex) => (
-        <View key={innerIndex} style={styles.innerContainer}>
-          <View style={styles.left}>
-            {
+    const list = this.state.account.map((item) => item.accounts[0].transactions.map((value, innerIndex) => (
+      <View key={innerIndex} style={styles.innerContainer}>
+        <View style={styles.left}>
+          {
               (value.transaction_type === 'DEBIT') ?
                 <Image
                   source={require('../../assets/MyMoney/MoneyAddedIcon.png')}
@@ -91,22 +90,21 @@ class Account extends Component {
                   style={styles.transactions}
                 />
             }
-          </View>
-          <View style={styles.middle}>
-            <Text
-              style={value.transaction_type === 'DEBIT' ? styles.debit : styles.credit}
-            >
-              ${(value.amount).toFixed(2)}
-            </Text>
-            <Text>{value.category}</Text>
-            <Text>{value.date}</Text>
-          </View>
-          <View style={styles.right}>
-            <Text>${(value.amount).toFixed(2)}</Text>
-          </View>
         </View>
-        ));
-    });
+        <View style={styles.middle}>
+          <Text
+            style={value.transaction_type === 'DEBIT' ? styles.debit : styles.credit}
+          >
+              ${(value.amount).toFixed(2)}
+          </Text>
+          <Text>{value.category}</Text>
+          <Text>{value.date}</Text>
+        </View>
+        <View style={styles.right}>
+          <Text>${(value.amount).toFixed(2)}</Text>
+        </View>
+      </View>
+        )));
     return (
       <View style={styles.container}>
         <Header amount={this.state.account[0].accounts[0].account.balance} />
