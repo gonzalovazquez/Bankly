@@ -27,23 +27,22 @@ const styles = StyleSheet.create({
     },
   },
   header: {
-    flexDirection: "row",
+    flexDirection: 'row',
     paddingTop: 20,
     paddingBottom: 20,
   },
   textHeader: {
     fontSize: 18,
-    fontWeight: "600",
+    fontWeight: 600,
     width: '40%',
     paddingLeft: 20,
     paddingTop: 10,
-    
   },
   imageHeader: {
     width: '50%',
     paddingLeft: 16,
   },
-  inputContainer:{
+  inputContainer: {
     marginLeft: 20,
     marginRight: 20,
   },

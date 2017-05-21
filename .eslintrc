@@ -10,7 +10,8 @@
   },
   "rules": {
     "max-len": [1, 120, 2, {"ignoreComments": true}],
-    "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx"] }]
+    "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx"] }],
+    "global-require": 0
   },
   "globals": {
     "$": true,

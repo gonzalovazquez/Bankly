@@ -27,13 +27,13 @@ const styles = StyleSheet.create({
     },
   },
   header: {
-    flexDirection: "row",
+    flexDirection: 'row',
     paddingTop: 20,
     paddingBottom: 20,
   },
   textHeader: {
     fontSize: 18,
-    fontWeight: "600",
+    fontWeight: 600,
     width: '55%',
     paddingLeft: 20,
     paddingTop: 10,
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
   imageHeader: {
     width: '38%',
   },
-  inputContainer:{
+  inputContainer: {
     marginLeft: 20,
     marginRight: 20,
   },
@@ -128,7 +128,7 @@ class Withdraw extends Component {
             </Text>
           </TouchableOpacity>
           <Text style={styles.quote}>
-          “A simple fact that is hard to learn is that the time to 
+          “A simple fact that is hard to learn is that the time to
           save money is when you have some.” -Joe Moore
           </Text>
           <Image
