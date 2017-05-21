@@ -6,6 +6,8 @@ import {
   Image,
 } from 'react-native';
 
+import chores from '../../mock/chores.json';
+
 const styles = StyleSheet.create({
   container: {
     top: 20,
@@ -31,7 +33,7 @@ const styles = StyleSheet.create({
   },
   textHeader: {
     fontSize: 18,
-    fontWeight: 600,
+    fontWeight: '600',
     width: '40%',
     paddingLeft: 20,
     paddingTop: 10,
@@ -49,8 +51,7 @@ class Chores extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      category: 'Gift, lunch money, chores, etc',
-      amount: 'eg. 10',
+      chores,
     };
   }
   render() {
@@ -63,6 +64,11 @@ class Chores extends Component {
               source={require('../../assets/AddMoney/coinrow_1.png')}
               style={{ height: 36, width: '100%' }}
             />
+          </View>
+          <View>
+            {this.state.chores.map((item, index) => (
+              <Text key={index}>{item.name}</Text>
+            ))}
           </View>
         </View>
       </View>

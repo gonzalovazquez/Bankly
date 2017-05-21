@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
   },
   textHeader: {
     fontSize: 18,
-    fontWeight: 600,
+    fontWeight: '600',
     width: '40%',
     paddingLeft: 20,
     paddingTop: 10,
