@@ -4,7 +4,9 @@ import {
   Text,
   StyleSheet,
   Image,
+  ScrollView,
 } from 'react-native';
+import CheckBox from 'react-native-checkbox';
 
 import chores from '../../mock/chores.json';
 
@@ -42,6 +44,22 @@ const styles = StyleSheet.create({
     width: '50%',
     paddingLeft: 16,
   },
+  choresBody: {
+    marginLeft: 20,
+    marginRight: 20,
+  },
+  rowChore: {
+    paddingTop: 20,
+    paddingBottom: 20,
+  },
+  chechbox: {
+    color: '#4A4A4A',
+    fontSize: 16,
+  },
+  rowDeadline: {
+    color: '#9B9B9B',
+    fontSize: 14,
+  },
 });
 
 class Chores extends Component {
@@ -55,6 +73,9 @@ class Chores extends Component {
     };
   }
   render() {
+    this.toggleCheckbox = (checked, index) => {
+      alert(checked, index);
+    };
     return (
       <View style={styles.container}>
         <View style={styles.header}>
@@ -65,12 +86,20 @@ class Chores extends Component {
               style={{ height: 36, width: '100%' }}
             />
           </View>
-          <View>
-            {this.state.chores.map((item, index) => (
-              <Text key={index}>{item.name}</Text>
-            ))}
-          </View>
         </View>
+        <ScrollView style={styles.choresBody}>
+          {this.state.chores.map((item, index) => (
+            <View key={index} style={styles.rowChore}>
+              <CheckBox
+                labelStyle={styles.chechbox}
+                label={item.name}
+                checked={item.completed}
+                onChange={(checked) => this.toggleCheckbox(checked, index)}
+              />
+              <Text style={styles.rowDeadline}>By: {item.due}</Text>
+            </View>
+          ))}
+        </ScrollView>
       </View>
     );
   }

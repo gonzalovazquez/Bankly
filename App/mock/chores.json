@@ -4,13 +4,20 @@
     "customer_id": "1",
     "name": "Clean litterbox",
     "completed": false,
-    "due-date": "02/01/2017"
+    "due": "02/01/2017"
   },
   {
     "id": "2",
     "customer_id": "1",
     "name": "Take out garbage",
     "completed": true,
-    "due-date": "02/02/2017"
+    "due": "02/02/2017"
+  },
+  {
+    "id": "3",
+    "customer_id": "1",
+    "name": "Clean garage",
+    "completed": false,
+    "due": "02/02/2017"
   }
 ]
