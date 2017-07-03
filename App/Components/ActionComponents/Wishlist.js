@@ -7,6 +7,7 @@ import {
   Button,
   Modal,
   TouchableHighlight,
+  TextInput
 } from 'react-native';
 
 import PropTypes from 'prop-types';
@@ -56,10 +57,48 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     borderColor: '#000',
   },
-  modalContainer: {
+});
 
+
+const stylesModal = StyleSheet.create({
+  modalContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  formContainer: {
+    flexDirection:'column',
+    width: '100%',
+    paddingLeft: '4%',
+    paddingRight: '4%',
+  },
+  labelText: {
+    marginTop: '4%',
+  },
+  input: {
+    borderColor: '#DEE0DF',
+    borderRadius: 10,
+    borderWidth: 2,
+    height: 40,
+    padding: 10,
+    color: '#9B9B9B',
+  },
+  button: {
+    backgroundColor: '#5CB247',
+    width: 175,
+    height: 40,
+    borderRadius: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 40,
+  },
+  actionText: {
+    fontSize: 16,
+    color: '#fff',
+    fontWeight: '600',
   },
 });
+
 
 const WishlistModal = (props) => (
   <Modal
@@ -67,14 +106,30 @@ const WishlistModal = (props) => (
     transparent={false}
     visible={props.visible}
   >
-    <View style={styles.modalContainer}>
+    <View style={stylesModal.modalContainer}>
       <Text>
-        Hello World
+        Add new wishlist item
       </Text>
+      <View style={stylesModal.formContainer}>
+        <Text style={stylesModal.labelText}>
+          Name:
+        </Text>
+        <TextInput
+          style={stylesModal.input}
+        />
+        <Text style={stylesModal.labelText}>
+          Cost:
+        </Text>
+        <TextInput
+          style={stylesModal.input}
+        />
+      </View>
       <TouchableHighlight
-        onPress={() => { props.setModalVisible(!props.visible); }}
-      >
-        <Text>Add item</Text>
+       onPress={() => { props.setModalVisible(!props.visible); }}
+        style={stylesModal.button}>
+        <Text style={stylesModal.actionText}>
+          Add
+        </Text>
       </TouchableHighlight>
     </View>
   </Modal>
