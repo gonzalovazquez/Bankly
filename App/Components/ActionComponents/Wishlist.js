@@ -7,7 +7,7 @@ import {
   Button,
   Modal,
   TouchableHighlight,
-  TextInput
+  TextInput,
 } from 'react-native';
 
 import PropTypes from 'prop-types';
@@ -67,7 +67,7 @@ const stylesModal = StyleSheet.create({
     justifyContent: 'center',
   },
   formContainer: {
-    flexDirection:'column',
+    flexDirection: 'column',
     width: '100%',
     paddingLeft: '4%',
     paddingRight: '4%',
@@ -125,8 +125,9 @@ const WishlistModal = (props) => (
         />
       </View>
       <TouchableHighlight
-       onPress={() => { props.setModalVisible(!props.visible); }}
-        style={stylesModal.button}>
+        onPress={() => { props.setModalVisible(!props.visible); }}
+        style={stylesModal.button}
+      >
         <Text style={stylesModal.actionText}>
           Add
         </Text>
