@@ -6,8 +6,10 @@ import {
   ScrollView,
   Button,
   Modal,
-  TouchableHighlight
+  TouchableHighlight,
 } from 'react-native';
+
+import PropTypes from 'prop-types';
 
 import wishlist from '../../mock/wishlist.json';
 
@@ -52,7 +54,7 @@ const styles = StyleSheet.create({
   plusButton: {
     borderStyle: 'solid',
     borderRadius: 5,
-    borderColor: '#000'
+    borderColor: '#000',
   },
   modalContainer: {
 
@@ -61,17 +63,17 @@ const styles = StyleSheet.create({
 
 const WishlistModal = (props) => (
   <Modal
-    animationType={"slide"}
+    animationType={'slide'}
     transparent={false}
     visible={props.visible}
-    >
+  >
     <View style={styles.modalContainer}>
       <Text>
         Hello World
       </Text>
-      <TouchableHighlight onPress={() => {
-        props.setModalVisible(!props.visible)
-      }}>
+      <TouchableHighlight
+        onPress={() => { props.setModalVisible(!props.visible); }}
+      >
         <Text>Add item</Text>
       </TouchableHighlight>
     </View>
@@ -94,9 +96,6 @@ class Wishlist extends Component {
       this.setState({ modalVisible: true });
     };
     const setModalVisible = (visible) => {
-      console.log("^_____^");
-      console.log(visible);
-      console.log("-______-");
       this.setState({ modalVisible: visible });
     };
     return (
@@ -107,7 +106,7 @@ class Wishlist extends Component {
         <WishlistModal
           visible={this.state.modalVisible}
           setModalVisible={setModalVisible}
-          />
+        />
         <ScrollView style={styles.wishlistBody}>
           {this.state.wishlist.map((item, index) => (
             <View key={index} style={styles.rowChore}>
@@ -126,5 +125,11 @@ class Wishlist extends Component {
     );
   }
 }
+
+Wishlist.propTypes = {
+  visible: PropTypes.bool,
+  modalVisible: PropTypes.bool,
+  setModalVisible: PropTypes.func,
+};
 
 module.exports = Wishlist;
