@@ -126,7 +126,7 @@ class Wishlist extends Component {
   }
 }
 
-Wishlist.propTypes = {
+WishlistModal.propTypes = {
   visible: PropTypes.bool,
   modalVisible: PropTypes.bool,
   setModalVisible: PropTypes.func,
