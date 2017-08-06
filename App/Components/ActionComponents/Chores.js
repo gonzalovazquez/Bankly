@@ -74,7 +74,7 @@ class Chores extends Component {
   }
   render() {
     this.toggleCheckbox = (checked, index) => {
-      alert(checked, index);
+      // alert(checked, index);
     };
     return (
       <View style={styles.container}>

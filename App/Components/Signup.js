@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
 
 class Signup extends Component {
   signIn() {
-    alert('sign In');
+    // alert('sign In');
   }
   render() {
     const { navigate } = this.props.navigation;

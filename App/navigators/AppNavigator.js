@@ -36,7 +36,7 @@ export const AppNavigator = StackNavigator({
 
 /**
  * Bind Navigation with redux
- * @param {object} dispatch - Dispatcher 
+ * @param {object} dispatch - Dispatcher
  */
 const AppWithNavigationState = ({ dispatch, nav }) => (
   <AppNavigator navigation={addNavigationHelpers({ dispatch, state: nav })} />
