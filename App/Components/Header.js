@@ -37,6 +37,10 @@ const styles = StyleSheet.create({
   },
 });
 
+/**
+ * Header Component
+ * @param {object} props - Props
+ */
 const Header = (props) => (
   <View style={styles.header}>
     <View style={styles.avatarContainer}>

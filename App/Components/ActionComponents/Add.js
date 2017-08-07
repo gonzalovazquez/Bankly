@@ -85,6 +85,11 @@ const styles = StyleSheet.create({
   },
 });
 
+/**
+ * Add Component
+ * @class Add
+ * @extends {Component}
+ */
 class Add extends Component {
   static navigationOptions = {
     title: 'Add Money',

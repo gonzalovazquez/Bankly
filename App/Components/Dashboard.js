@@ -44,6 +44,11 @@ const styles = StyleSheet.create({
   },
 });
 
+/**
+ * Dashboard Component
+ * @class Dashboard
+ * @extends {Component}
+ */
 class Dashboard extends Component {
   static navigationOptions = {
     title: 'Bankly',

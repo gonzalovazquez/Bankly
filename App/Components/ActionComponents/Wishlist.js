@@ -99,7 +99,10 @@ const stylesModal = StyleSheet.create({
   },
 });
 
-
+/**
+ * WishlistModal
+ * @param {object} props - Properties
+ */
 const WishlistModal = (props) => (
   <Modal
     animationType={'slide'}
@@ -136,6 +139,11 @@ const WishlistModal = (props) => (
   </Modal>
 );
 
+/**
+ * Wishlist Component
+ * @class Wishlist
+ * @extends {Component}
+ */
 class Wishlist extends Component {
   static navigationOptions = {
     title: 'Wishlist',

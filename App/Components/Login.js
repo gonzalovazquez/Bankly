@@ -37,6 +37,11 @@ const styles = StyleSheet.create({
   },
 });
 
+/**
+ * Login Component
+ * @class Login
+ * @extends {Component}
+ */
 class Login extends Component {
   render() {
     const { navigate } = this.props.navigation;

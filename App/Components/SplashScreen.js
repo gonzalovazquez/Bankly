@@ -18,6 +18,11 @@ const styles = StyleSheet.create({
   },
 });
 
+/**
+ * SplashScreen Component
+ * @class SplashScreen
+ * @extends {Component}
+ */
 class SplashScreen extends Component {
   componentDidMount() {
     const { navigate } = this.props.navigation;

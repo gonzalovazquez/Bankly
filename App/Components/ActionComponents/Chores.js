@@ -62,6 +62,11 @@ const styles = StyleSheet.create({
   },
 });
 
+/**
+ * Chores Component
+ * @class Chores
+ * @extends {Component}
+ */
 class Chores extends Component {
   static navigationOptions = {
     title: 'Chores',

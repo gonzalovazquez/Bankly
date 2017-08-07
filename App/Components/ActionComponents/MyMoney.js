@@ -65,6 +65,11 @@ const styles = StyleSheet.create({
   },
 });
 
+/**
+ * Account Component
+ * @class Account
+ * @extends {Component}
+ */
 class Account extends Component {
   static navigationOptions = {
     title: 'My Money',

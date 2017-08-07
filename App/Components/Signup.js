@@ -37,6 +37,11 @@ const styles = StyleSheet.create({
   },
 });
 
+/**
+ * Component for SignUp
+ * @class Signup
+ * @extends {Component}
+ */
 class Signup extends Component {
   signIn() {
     // alert('sign In');

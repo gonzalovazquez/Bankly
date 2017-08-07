@@ -84,6 +84,11 @@ const styles = StyleSheet.create({
   },
 });
 
+/**
+ * Withdraw Component
+ * @class Withdraw
+ * @extends {Component}
+ */
 class Withdraw extends Component {
   static navigationOptions = {
     title: 'Withdraw Money',

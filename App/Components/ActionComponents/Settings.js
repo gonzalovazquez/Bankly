@@ -37,6 +37,11 @@ const styles = StyleSheet.create({
   },
 });
 
+/**
+ * Setting Component
+ * @class Settings
+ * @extends {Component}
+ */
 class Settings extends Component {
   static navigationOptions = {
     title: 'Settings',
