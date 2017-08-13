@@ -161,6 +161,10 @@ class Dashboard extends Component {
   }
 }
 
+/**
+ * propTypes
+ * @property {object} navigation - Navigation screens
+ */
 Dashboard.propTypes = {
   navigation: PropTypes.object.isRequired,
 };
