@@ -4,6 +4,7 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 //import { createLogger } from 'redux-logger';
 import user from './App/reducers/user';
 import nav from './App/reducers/nav';
+import { reducer as form } from 'redux-form';
 
 /**
  * Defining all reducers
@@ -11,6 +12,7 @@ import nav from './App/reducers/nav';
 const reducers = {
   user,
   nav,
+  form,
 };
 
 /**
