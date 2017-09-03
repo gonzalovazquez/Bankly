@@ -39,8 +39,6 @@ const styles = StyleSheet.create({
   },
 });
 
-
-
 /**
  * Login Component
  * @class Login
@@ -68,14 +66,14 @@ class Login extends Component {
             name={'email'}
             component={renderField}
             placeholder="Email"
-            autoCapitalize='none'
+            autoCapitalize="none"
           />
           <Field
             name={'password'}
             component={renderField}
             placeholder="Password"
             secureTextEntry
-            autoCapitalize='none'
+            autoCapitalize="none"
           />
         </View>
         <TouchableHighlight
@@ -115,10 +113,10 @@ const formData = {
 
 Login.propTypes = {
   navigation: PropTypes.object.isRequired,
+  handleSubmit: PropTypes.func,
 };
 
 /**
  * Connect component to Redux Form.
  */
-//export default reduxForm(formData)(Login);
 export default reduxForm(formData)(Login);

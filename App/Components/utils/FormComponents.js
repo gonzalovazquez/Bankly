@@ -1,23 +1,23 @@
 import React from 'react';
-import { TextInput, View, Text, StyleSheet } from 'react-native';
+import { TextInput, View, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 
 const styles = StyleSheet.create({
   input: {
     height: 30,
     padding: 5,
-    width: 300
+    width: 300,
   },
   inputContainer: {
     borderBottomWidth: 1,
     borderColor: 'rgba(0, 0, 0, 0.4)',
-    marginTop: 20
+    marginTop: 20,
   },
   valid: {
-    borderColor: '#53E69D'
+    borderColor: '#53E69D',
   },
   invalid: {
-    borderColor: '#F55E64'
+    borderColor: '#F55E64',
   },
 });
 
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
  * @return {ReactElement} markup.
  */
 export function renderField(props) {
-  const { input, meta, ...inputProps, } = props;
+  const { input, meta, ...inputProps } = props;
   const validationStyles = meta.touched && !meta.active
   ? meta.valid ? styles.valid : styles.invalid
   : null;
@@ -48,7 +48,7 @@ export function renderField(props) {
         secureTextEntry={props.secureTextEntry}
         autoCapitalize={props.autoCapitalize}
         style={styles.input}
-        />
+      />
     </View>
   );
 }
@@ -59,7 +59,7 @@ const emailRegex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]
  * Validates form
  * @param {object} values - Form
  */
-export function validate (values) {
+export function validate(values) {
   const errors = {};
   errors.email = !values.email
     ? 'Email field is required'
@@ -82,6 +82,8 @@ export function validate (values) {
  * @property {string} label - DOM element
  * @property {string} type - Type of input
  * @property {object} meta - Validation information.
+ * @property {boolean} secureTextEntry - Enable secure text entry
+ * @property {string} autoCapitalize - Enable autocapitalization
  * @property {string} placeholder - Placeholder text
  */
 renderField.propTypes = {
@@ -89,5 +91,7 @@ renderField.propTypes = {
   label: PropTypes.string,
   type: PropTypes.string,
   meta: PropTypes.object,
+  secureTextEntry: PropTypes.bool,
+  autoCapitalize: PropTypes.string,
   placeholder: PropTypes.string,
 };
