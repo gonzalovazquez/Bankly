@@ -1,14 +1,25 @@
 import React from 'react';
+import { TextInput, View, Text, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 
-const styles = {
-  innerPadding: {
-    padding: '10px 0 10px 0',
+const styles = StyleSheet.create({
+  input: {
+    height: 30,
+    padding: 5,
+    width: 300
   },
-  padding: {
-    padding: '10px 0 10px 0',
+  inputContainer: {
+    borderBottomWidth: 1,
+    borderColor: 'rgba(0, 0, 0, 0.4)',
+    marginTop: 20
   },
-};
+  valid: {
+    borderColor: '#53E69D'
+  },
+  invalid: {
+    borderColor: '#F55E64'
+  },
+});
 
 /**
  * Renders a input field with extra features.
@@ -19,18 +30,24 @@ const styles = {
  * @param {string} placeholder - Placeholder text.
  * @return {ReactElement} markup.
  */
-export const renderField = ({ input, label, type, meta: { touched, error, warning }, placeholder }) => (
-  <div style={styles.innerPadding}>
-    <label htmlFor={input.name}>{label}</label>
-    <div>
-      <input {...input} type={type} style={{ marginBottom: '0px' }} placeholder={placeholder} />
-      {touched &&
-        ((error && <span className="red-text text-darken-4">{error}</span>)
-        || (warning && <span>{warning}</span>))
-      }
-    </div>
-  </div>
-);
+export default function MyTextInput(props) {
+  const { input, ...inputProps } = props;
+  return (
+    <View style={styles.inputContainer}>
+      <TextInput
+        {...inputProps}
+        onChangeText={input.onChange}
+        onBlur={input.onBlur}
+        onFocus={input.onFocus}
+        value={input.value}
+        placeholder={props.placeholder}
+        secureTextEntry={props.secureTextEntry}
+        autoCapitalize={props.autoCapitalize}
+        style={styles.input}
+        />
+    </View>
+  );
+}
 
 /**
  * propTypes
@@ -40,7 +57,7 @@ export const renderField = ({ input, label, type, meta: { touched, error, warnin
  * @property {object} meta - Validation information.
  * @property {string} placeholder - Placeholder text
  */
-renderField.propTypes = {
+MyTextInput.propTypes = {
   input: PropTypes.object,
   label: PropTypes.string,
   type: PropTypes.string,
