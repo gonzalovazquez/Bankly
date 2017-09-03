@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text, Image, TouchableHighlight } from 'react-native';
 import PropTypes from 'prop-types';
+import { renderField } from './utils/FormComponents';
 
 const styles = StyleSheet.create({
   container: {
