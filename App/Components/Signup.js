@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text, Image, TouchableHighlight } from 'react-native';
 import PropTypes from 'prop-types';
+import { Field, reduxForm } from 'redux-form';
+import { renderField, validate } from './utils/FormComponents';
 
 const styles = StyleSheet.create({
   container: {
@@ -10,9 +12,12 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   logo: {
-    marginTop: '25%',
+    marginTop: '20%',
     height: 200,
     width: 200,
+  },
+  signInForm: {
+    marginBottom: 20,
   },
   login: {
     backgroundColor: 'red',
@@ -43,8 +48,12 @@ const styles = StyleSheet.create({
  * @extends {Component}
  */
 class Signup extends Component {
-  signIn() {
-    // alert('sign In');
+  /**
+   * Fires event to onboard Client
+   * @param {object} payload - Client information.
+   */
+  onSubmit(payload) {
+    alert(payload);
   }
   render() {
     const { navigate } = this.props.navigation;
@@ -54,31 +63,41 @@ class Signup extends Component {
           source={require('../assets/Banky_logo_2.png')}
           style={styles.logo}
         />
+        <View style={styles.signInForm}>
+          <Field
+              name={'username'}
+              component={renderField}
+              placeholder="Username"
+              autoCapitalize="none"
+            />
+          <Field
+            name={'email'}
+            component={renderField}
+            placeholder="Email"
+            autoCapitalize="none"
+          />
+          <Field
+            name={'password'}
+            component={renderField}
+            placeholder="Password"
+            secureTextEntry
+            autoCapitalize="none"
+          />
+          <Field
+            name={'password'}
+            component={renderField}
+            placeholder="Retype Password"
+            secureTextEntry
+            autoCapitalize="none"
+          />
+        </View>
         <TouchableHighlight
           style={styles.button}
-          onPress={() => this.signIn}
+          onPress={() => navigate('SignUp')}
           underlayColor="white"
         >
           <Text style={styles.buttonText}>
-            Email
-          </Text>
-        </TouchableHighlight>
-        <TouchableHighlight
-          style={styles.button}
-          onPress={() => this.signIn}
-          underlayColor="white"
-        >
-          <Text style={styles.buttonText}>
-            Password
-          </Text>
-        </TouchableHighlight>
-        <TouchableHighlight
-          style={styles.button}
-          onPress={() => navigate('Dashboard')}
-          underlayColor="white"
-        >
-          <Text style={styles.buttonText}>
-            Login
+            Register
           </Text>
         </TouchableHighlight>
       </View>
@@ -86,8 +105,24 @@ class Signup extends Component {
   }
 }
 
+/**
+ * Register fields with form-redux.
+ */
+const formData = {
+  form: 'Register',
+  fields: [
+    'username',
+    'email',
+    'password',
+  ],
+  validate,
+};
+
 Signup.propTypes = {
   navigation: PropTypes.object.isRequired,
 };
 
-module.exports = Signup;
+/**
+ * Connect component to Redux Form.
+ */
+export default reduxForm(formData)(Signup);

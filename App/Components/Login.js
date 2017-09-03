@@ -88,6 +88,7 @@ class Login extends Component {
         <TouchableHighlight
           style={styles.button}
           onPress={() => navigate('SignUp')}
+          // onPress={() => navigate('Dashboard')}
           underlayColor="white"
         >
           <Text style={styles.buttonText}>
