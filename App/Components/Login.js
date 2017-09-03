@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, View, Text, Image, TouchableHighlight } from 'react-native';
 import { Field, reduxForm } from 'redux-form';
 import PropTypes from 'prop-types';
-import MyTextInput from './utils/FormComponents';
+import { renderField, validate } from './utils/FormComponents';
 
 const styles = StyleSheet.create({
   container: {
@@ -39,6 +39,8 @@ const styles = StyleSheet.create({
   },
 });
 
+
+
 /**
  * Login Component
  * @class Login
@@ -50,11 +52,11 @@ class Login extends Component {
    * @param {object} payload - Client information.
    */
   onSubmit(payload) {
-    console.log(payload);
     alert(payload);
   }
   render() {
     const { navigate } = this.props.navigation;
+    const { handleSubmit } = this.props;
     return (
       <View style={styles.container}>
         <Image
@@ -62,23 +64,23 @@ class Login extends Component {
           style={styles.logo}
         />
         <View style={styles.signInForm}>
-        <Field
-          name={'email'}
-          component={MyTextInput}
-          placeholder="Email"
-          autoCapitalize='none'
-        />
-        <Field
-          name={'password'}
-          component={MyTextInput}
-          placeholder="Password"
-          secureTextEntry
-          autoCapitalize='none'
-        />
+          <Field
+            name={'email'}
+            component={renderField}
+            placeholder="Email"
+            autoCapitalize='none'
+          />
+          <Field
+            name={'password'}
+            component={renderField}
+            placeholder="Password"
+            secureTextEntry
+            autoCapitalize='none'
+          />
         </View>
         <TouchableHighlight
           style={styles.button}
-          onPress={this.onSubmit}
+          onPress={handleSubmit(this.onSubmit)}
           underlayColor="white"
         >
           <Text style={styles.buttonText}>
@@ -105,10 +107,10 @@ class Login extends Component {
 const formData = {
   form: 'SignIn',
   fields: [
-    'username',
+    'email',
     'password',
   ],
-  //validate,
+  validate,
 };
 
 Login.propTypes = {
@@ -118,4 +120,5 @@ Login.propTypes = {
 /**
  * Connect component to Redux Form.
  */
+//export default reduxForm(formData)(Login);
 export default reduxForm(formData)(Login);

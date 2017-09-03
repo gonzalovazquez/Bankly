@@ -24,16 +24,20 @@ const styles = StyleSheet.create({
 /**
  * Renders a input field with extra features.
  * @param {DomElement} input - Input element.
- * @param {DomElement} label - Label.
- * @param {string} type - Type of input.
+ * @param {DomElement} inputProps - Input children.
  * @param {object} meta - Validation information.
  * @param {string} placeholder - Placeholder text.
+ * @param {bool} secureTextEntry - Secure Text Entry.
+ * @param {string} autoCapitalize - Auto Capitalization.
  * @return {ReactElement} markup.
  */
-export default function MyTextInput(props) {
-  const { input, ...inputProps } = props;
+export function renderField(props) {
+  const { input, meta, ...inputProps, } = props;
+  const validationStyles = meta.touched && !meta.active
+  ? meta.valid ? styles.valid : styles.invalid
+  : null;
   return (
-    <View style={styles.inputContainer}>
+    <View style={[styles.inputContainer, validationStyles]}>
       <TextInput
         {...inputProps}
         onChangeText={input.onChange}
@@ -49,6 +53,29 @@ export default function MyTextInput(props) {
   );
 }
 
+const emailRegex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@((?:[a-z0-9-]*)?\.)+(?:[A-Z]{2}|com)/;
+
+/**
+ * Validates form
+ * @param {object} values - Form
+ */
+export function validate (values) {
+  const errors = {};
+  errors.email = !values.email
+    ? 'Email field is required'
+    : !emailRegex.test(values.email)
+    ? 'Email format is invalid'
+    : undefined;
+
+  errors.password = !values.password
+    ? 'Password field is required'
+    : values.password.length < 8
+    ? 'Password must be at least 8 characters long'
+    : undefined;
+
+  return errors;
+}
+
 /**
  * propTypes
  * @property {object} input - DOM element
@@ -57,7 +84,7 @@ export default function MyTextInput(props) {
  * @property {object} meta - Validation information.
  * @property {string} placeholder - Placeholder text
  */
-MyTextInput.propTypes = {
+renderField.propTypes = {
   input: PropTypes.object,
   label: PropTypes.string,
   type: PropTypes.string,
