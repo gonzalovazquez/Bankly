@@ -4,10 +4,10 @@ import { AppNavigator } from '../navigators/AppNavigator';
 
 // Start with two routes: The Main screen, with the Login screen on top.
 const firstAction = AppNavigator.router.getActionForPathAndParams('Home');
-const secondAction = AppNavigator.router.getActionForPathAndParams('Login');
+//const secondAction = AppNavigator.router.getActionForPathAndParams('Login');
 const initialNavState = AppNavigator.router.getStateForAction(
   firstAction,
-  secondAction,
+  //secondAction,
 );
 
 /**
