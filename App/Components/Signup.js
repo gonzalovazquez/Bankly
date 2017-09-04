@@ -53,10 +53,11 @@ class Signup extends Component {
    * @param {object} payload - Client information.
    */
   onSubmit(payload) {
-    alert(payload);
+    alert(JSON.stringify(payload));
   }
   render() {
     const { navigate } = this.props.navigation;
+    const { handleSubmit } = this.props;
     return (
       <View style={styles.container}>
         <Image
@@ -83,17 +84,10 @@ class Signup extends Component {
             secureTextEntry
             autoCapitalize="none"
           />
-          <Field
-            name={'password'}
-            component={renderField}
-            placeholder="Retype Password"
-            secureTextEntry
-            autoCapitalize="none"
-          />
         </View>
         <TouchableHighlight
           style={styles.button}
-          onPress={() => navigate('SignUp')}
+          onPress={handleSubmit(this.onSubmit)}
           underlayColor="white"
         >
           <Text style={styles.buttonText}>
