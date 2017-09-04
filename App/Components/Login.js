@@ -78,7 +78,8 @@ class Login extends Component {
         </View>
         <TouchableHighlight
           style={styles.button}
-          onPress={handleSubmit(this.onSubmit)}
+          onPress={() => navigate('Dashboard')}
+          // onPress={handleSubmit(this.onSubmit)}
           underlayColor="white"
         >
           <Text style={styles.buttonText}>
