@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import {
   View,
   Text,
@@ -11,8 +12,7 @@ import {
   TextInput,
 } from 'react-native';
 import CheckBox from 'react-native-checkbox';
-
-import chores from '../../mock/chores.json';
+import { fetchChores } from '../../actions/chores';
 
 const styles = StyleSheet.create({
   container: {
@@ -158,9 +158,12 @@ class Chores extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      chores,
+      chores: this.props.chores,
       modalVisible: false,
     };
+  }
+  componentWillMount() {
+    this.props.fetchChores();
   }
   render() {
     this.toggleCheckbox = (checked, index) => {
@@ -212,5 +215,14 @@ class Chores extends Component {
   }
 }
 
+/**
+ * Maps documentation state to parameters.
+ * @param {object} - Documentation.
+ */
+const mapStateToProps = (state) => ({
+  chores: state.chores.chores
+});
 
-module.exports = Chores;
+export default Chores = connect(mapStateToProps, {
+  fetchChores,
+})(Chores);
