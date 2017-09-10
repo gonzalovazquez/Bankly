@@ -5,6 +5,10 @@ import {
   StyleSheet,
   Image,
   ScrollView,
+  Button,
+  Modal,
+  TouchableHighlight,
+  TextInput,
 } from 'react-native';
 import CheckBox from 'react-native-checkbox';
 
@@ -62,6 +66,86 @@ const styles = StyleSheet.create({
   },
 });
 
+const stylesModal = StyleSheet.create({
+  modalContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  formContainer: {
+    flexDirection: 'column',
+    width: '100%',
+    paddingLeft: '4%',
+    paddingRight: '4%',
+  },
+  labelText: {
+    marginTop: '4%',
+  },
+  input: {
+    borderColor: '#DEE0DF',
+    borderRadius: 10,
+    borderWidth: 2,
+    height: 40,
+    padding: 10,
+    color: '#9B9B9B',
+  },
+  button: {
+    backgroundColor: '#5CB247',
+    width: 175,
+    height: 40,
+    borderRadius: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 40,
+  },
+  actionText: {
+    fontSize: 16,
+    color: '#fff',
+    fontWeight: '600',
+  },
+});
+
+
+/**
+ * ChoresModal
+ * @param {object} props - Properties
+ */
+const ChoresModal = (props) => (
+  <Modal
+    animationType={'slide'}
+    transparent={false}
+    visible={props.visible}
+  >
+    <View style={stylesModal.modalContainer}>
+      <Text>
+        Add new wishlist item
+      </Text>
+      <View style={stylesModal.formContainer}>
+        <Text style={stylesModal.labelText}>
+          Name:
+        </Text>
+        <TextInput
+          style={stylesModal.input}
+        />
+        <Text style={stylesModal.labelText}>
+          Cost:
+        </Text>
+        <TextInput
+          style={stylesModal.input}
+        />
+      </View>
+      <TouchableHighlight
+        onPress={() => { props.setModalVisible(!props.visible); }}
+        style={stylesModal.button}
+      >
+        <Text style={stylesModal.actionText}>
+          Add
+        </Text>
+      </TouchableHighlight>
+    </View>
+  </Modal>
+);
+
 /**
  * Chores Component
  * @class Chores
@@ -75,11 +159,18 @@ class Chores extends Component {
     super(props);
     this.state = {
       chores,
+      modalVisible: false,
     };
   }
   render() {
     this.toggleCheckbox = (checked, index) => {
       alert(checked, index);
+    };
+    const onPressLearnMore = () => {
+      this.setState({ modalVisible: true });
+    };
+    const setModalVisible = (visible) => {
+      this.setState({ modalVisible: visible });
     };
     return (
       <View style={styles.container}>
@@ -92,6 +183,10 @@ class Chores extends Component {
             />
           </View>
         </View>
+        <ChoresModal
+          visible={this.state.modalVisible}
+          setModalVisible={setModalVisible}
+        />
         <ScrollView style={styles.choresBody}>
           {this.state.chores.map((item, index) => (
             <View key={index} style={styles.rowChore}>
@@ -104,6 +199,13 @@ class Chores extends Component {
               <Text style={styles.rowDeadline}>By: {item.due}</Text>
             </View>
           ))}
+          <Button
+            style={styles.plusButton}
+            onPress={onPressLearnMore}
+            title="+"
+            color="#c3c3c3"
+            accessibilityLabel="New Chore"
+          />
         </ScrollView>
       </View>
     );
