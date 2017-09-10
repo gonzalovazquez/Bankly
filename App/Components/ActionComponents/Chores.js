@@ -12,7 +12,10 @@ import {
   TextInput,
 } from 'react-native';
 import CheckBox from 'react-native-checkbox';
-import { fetchChores } from '../../actions/chores';
+import { 
+  fetchChores,
+  updateChore,
+ } from '../../actions/chores';
 
 const styles = StyleSheet.create({
   container: {
@@ -165,9 +168,6 @@ class Chores extends Component {
     this.props.fetchChores();
   }
   render() {
-    this.toggleCheckbox = (checked, index) => {
-      alert(checked, index);
-    };
     const onPressLearnMore = () => {
       this.setState({ modalVisible: true });
     };
@@ -196,7 +196,7 @@ class Chores extends Component {
                 labelStyle={styles.chechbox}
                 label={item.name}
                 checked={item.completed}
-                onChange={(checked) => this.toggleCheckbox(checked, index)}
+                onChange={() => this.props.updateChore(item.id)}
               />
               <Text style={styles.rowDeadline}>By: {item.due}</Text>
             </View>
@@ -224,4 +224,5 @@ const mapStateToProps = (state) => ({
 
 export default Chores = connect(mapStateToProps, {
   fetchChores,
+  updateChore,
 })(Chores);

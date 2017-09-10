@@ -25,7 +25,7 @@ export default function chores(state = initialState, action) {
     case 'UPDATE_COMPLETE_CHORE':
       newState.chores.map((chore) => {
         if (chore.id == action.id) {
-          chore.completed = !chore.completed
+            chore.completed = !chore.completed;
         }
       });
       return newState;
