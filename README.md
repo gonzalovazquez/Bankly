@@ -45,3 +45,16 @@ App ---
 
 # Navigation
 For navigation we are using https://reactnavigation.org/ which supports both Android and iOS. 
+
+# Building
+
+A common problem that exist is the app returns "Unhandler JS Expection". If that problems shows up,
+please do the following:
+
+```
+watchman watch-del-all
+rm -rf ./node_modules
+npm cache clean
+npm i
+./node_modules/react-native/packager/packager.sh start --resetCache
+```
