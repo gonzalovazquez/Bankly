@@ -67,7 +67,13 @@ export const fetchChores = () => (dispatch) => {
  * @param {object} chore - New Chore
  */
 export const newChore = (chore) => (dispatch) => {
-  dispatch(createNewChore(chore));
+  const newChore = {
+    id: parseInt(Math.random() * 1000),
+    name: chore.name,
+    completed: false,
+    due: chore.due,
+  };
+  dispatch(createNewChore(newChore));
 }
 
 /**

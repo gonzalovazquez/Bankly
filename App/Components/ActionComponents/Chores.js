@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 import {
   View,
@@ -10,12 +11,15 @@ import {
   Modal,
   TouchableHighlight,
   TextInput,
+  DatePickerIOS
 } from 'react-native';
 import CheckBox from 'react-native-checkbox';
-import { 
+import {
+  newChore,
   fetchChores,
   updateChore,
  } from '../../actions/chores';
+ import { renderField, renderCalendar } from '../utils/FormComponents';
 
 const styles = StyleSheet.create({
   container: {
@@ -75,14 +79,10 @@ const stylesModal = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  formContainer: {
-    flexDirection: 'column',
-    width: '100%',
-    paddingLeft: '4%',
-    paddingRight: '4%',
-  },
   labelText: {
     marginTop: '4%',
+    fontSize: 18,
+    color: '#c7c7c7',
   },
   input: {
     borderColor: '#DEE0DF',
@@ -99,7 +99,7 @@ const stylesModal = StyleSheet.create({
     borderRadius: 10,
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 40,
+    marginTop: '80%',
   },
   actionText: {
     fontSize: 16,
@@ -107,7 +107,6 @@ const stylesModal = StyleSheet.create({
     fontWeight: '600',
   },
 });
-
 
 /**
  * ChoresModal
@@ -120,25 +119,24 @@ const ChoresModal = (props) => (
     visible={props.visible}
   >
     <View style={stylesModal.modalContainer}>
-      <Text>
-        Add new wishlist item
+      <Field
+        name={'name'}
+        component={renderField}
+        placeholder="Chore Name"
+        autoCapitalize="none"
+      />
+      <Text
+        style={stylesModal.labelText}
+      >
+        Due Date:
       </Text>
-      <View style={stylesModal.formContainer}>
-        <Text style={stylesModal.labelText}>
-          Name:
-        </Text>
-        <TextInput
-          style={stylesModal.input}
-        />
-        <Text style={stylesModal.labelText}>
-          Cost:
-        </Text>
-        <TextInput
-          style={stylesModal.input}
-        />
-      </View>
+      <Field
+        name={'due'}
+        component={renderCalendar}
+        style={{ width: 300 }}
+      />
       <TouchableHighlight
-        onPress={() => { props.setModalVisible(!props.visible); }}
+        onPress={props.handleSubmit(props.onSubmit)}
         style={stylesModal.button}
       >
         <Text style={stylesModal.actionText}>
@@ -168,12 +166,18 @@ class Chores extends Component {
     this.props.fetchChores();
   }
   render() {
+    const { handleSubmit } = this.props;
     const onPressLearnMore = () => {
       this.setState({ modalVisible: true });
     };
     const setModalVisible = (visible) => {
       this.setState({ modalVisible: visible });
     };
+    const onSubmit = (payload) => {
+      //this.props.newChore(payload);
+      this.setState({ modalVisible: false });
+    };
+    const date = new Date();
     return (
       <View style={styles.container}>
         <View style={styles.header}>
@@ -187,7 +191,8 @@ class Chores extends Component {
         </View>
         <ChoresModal
           visible={this.state.modalVisible}
-          setModalVisible={setModalVisible}
+          onSubmit={onSubmit}
+          handleSubmit={handleSubmit}
         />
         <ScrollView style={styles.choresBody}>
           {this.props.chores.map((item, index) => (
@@ -222,7 +227,29 @@ const mapStateToProps = (state) => ({
   chores: state.chores.chores
 });
 
+/**
+ * Register fields with form-redux.
+ */
+const formData = {
+  form: 'Chores',
+  fields: [
+    'id',
+    'name',
+    'completed',
+    'due',
+  ],
+};
+
+/**
+ * Hooks up Component wih redux form.
+ */
+Chores = reduxForm(formData)(Chores);
+
+/**
+ * Connnect to Redux.
+ */
 export default Chores = connect(mapStateToProps, {
   fetchChores,
   updateChore,
+  newChore,
 })(Chores);

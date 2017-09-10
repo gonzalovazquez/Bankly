@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextInput, View, StyleSheet } from 'react-native';
+import { TextInput, View, StyleSheet, DatePickerIOS } from 'react-native';
 import PropTypes from 'prop-types';
 
 const styles = StyleSheet.create({
@@ -51,6 +51,21 @@ export function renderField(props) {
       />
     </View>
   );
+}
+
+export function renderCalendar(props) {
+  const { input, meta, ...inputProps } = props;
+  const date = new Date();
+  return (
+    <DatePickerIOS
+      date={date}
+      mode="date"
+      dateForm="MM/DD/YYYY"
+      selected={input.value}
+      onDateChange={input.onChange}
+      style={styles.input}
+    />
+  )
 }
 
 const emailRegex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@((?:[a-z0-9-]*)?\.)+(?:[A-Z]{2}|com)/;
