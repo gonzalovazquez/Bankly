@@ -59,7 +59,6 @@ export const updateCompleteChore = (id) => ({
  * Fetch chores
  */
 export const fetchChores = () => (dispatch) => {
-  console.log(dispatch);
   dispatch(choresIsSuccessful(chores));
 }
 

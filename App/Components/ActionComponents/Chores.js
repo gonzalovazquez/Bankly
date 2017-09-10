@@ -158,7 +158,6 @@ class Chores extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      chores: this.props.chores,
       modalVisible: false,
     };
   }
@@ -191,7 +190,7 @@ class Chores extends Component {
           setModalVisible={setModalVisible}
         />
         <ScrollView style={styles.choresBody}>
-          {this.state.chores.map((item, index) => (
+          {this.props.chores.map((item, index) => (
             <View key={index} style={styles.rowChore}>
               <CheckBox
                 labelStyle={styles.chechbox}
