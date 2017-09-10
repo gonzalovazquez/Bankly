@@ -1,4 +1,4 @@
-[
+ [
   {
     "id": "1",
     "customer_id": "1",
@@ -10,7 +10,7 @@
     "id": "2",
     "customer_id": "1",
     "name": "Take out garbage",
-    "completed": true,
+    "completed": false,
     "due": "02/02/2017"
   },
   {
